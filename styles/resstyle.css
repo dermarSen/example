@@ -1,0 +1,111 @@
+* { box-sizing: border-box; }
+
+body {
+	font-family: Arial;
+}
+
+h1 {
+	 text-align: center;
+}
+#back{
+	position:absolute;
+	top:20px;
+	right:20px;
+	text-decoration: none;
+	font-size: 20px;
+	border:1px solid black;
+	border-radius:5px;
+	padding:5px;
+}
+#stage {
+	width: 400px;
+	height:150px;
+	margin: auto;
+	line-height: 150px;
+	border: 2px solid #ccc;
+	text-align: center;
+	font-size: 24px;
+	margin-bottom: 40px;
+	border-radius: 5px;
+}
+
+#seating {
+	overflow: hidden;
+	width: 730px;
+	margin: auto;
+	padding-left: 10px;
+}
+
+#seating section {
+	float: left;
+}
+
+#seating section div {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	width: 30px;
+	line-height: 26px;
+	border: 2px solid #ccc;
+	text-align: center;
+	font-size: 12px;
+}
+
+.a:hover, .s:hover {
+	cursor: pointer;
+}
+
+.a:hover {
+	background: #F9E300;
+}
+
+.s {
+	background: #F62BC8;
+}
+
+.r {
+	background: #FF0000;
+}
+
+#seating .label {
+	border: 2px solid #fff;
+	text-transform: uppercase;
+}
+
+#left, #right {
+	width: 160px;
+}
+
+#middle {
+	width: 360px;
+	margin: 0 20px;
+}
+
+#reserve {
+	display: block;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	padding: 20px;
+	background: #B7E792;
+	text-decoration: none;
+}
+
+.form-popup{
+	display: none;
+	position: absolute;
+	top:20px;
+	left:20px;
+	z-index: 9;
+	background-color: lightblue;
+	padding:10px;
+	width:400px;
+	text-align: center;
+}
+
+.block{
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+}
+

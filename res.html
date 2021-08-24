@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Hey there!</title>
+    <link rel="stylesheet" href="./styles/resstyle.css">
+    <script src="./scripts/resscript.js" defer></script>
+</head>
+
+<body>
+    <h1>Reserve Your Seats!</h1>
+    <div id="stage"></div>
+    <a id="back" href="index.html">Back to Example page</a>
+    <div id="seating">
+        <section id="left"></section>
+        <section id="middle"></section>
+        <section id="right"></section>
+    </div>
+
+    <a href="#" id="reserve">Reserve Seats</a>
+
+    <section id="resform" class="form-popup">
+        <h2>Fill this Form to complete your reservation</h2>
+        <p id="selectedSeats">Nothing Selected</p>
+
+        <form id="confirmres">
+            <label for="fname">First Name</label>
+            <input name="fname" type="text" id="fname" class="block" placeholder="fname" required>
+
+            <label for="lname">Last Name</label>
+            <input name="lname" type="text" placeholder="lname" id=lname class="block" required>
+
+            <input name="submit" type="submit" value="Confirm" id="confirmbtn" class="block">
+
+            <p>Or <a href="#" id="cancel">cancel</a> and choose different seats </p>
+        </form>
+    </section>
+</body>
+
+</html>

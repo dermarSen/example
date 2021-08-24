@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=WindSong:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
+
+:root{
+    --back-blue:rgb(38,66,101);
+    --blue:linear-gradient(27deg, rgba(38,66,101,1) 10%, rgba(80,86,98,1) 50%, rgba(37,43,69,1) 81%);
+    --back-green:rgb(53,61,40);
+    --green:linear-gradient(27deg, rgba(53,61,40,1) 4%, rgba(93,83,58,1) 55%, rgba(69,68,65,1) 98%);
+}
+body{
+    width:100%;
+    font-family: 'Calligraffitti', cursive;
+    background: #fff;
+    margin: 0;
+    
+}
+header{  
+    position: fixed;
+    top:0;
+    text-align: center;
+    width:100%;
+    height:80px;
+    z-index: 100;
+}
+
+/* nav */
+#heading{
+    display:none;
+    width: fit-content;
+    margin: 10px;
+    align-self: flex-start;
+}
+.nav-hide{
+    display:none;
+}
+#collapsable-nav{
+    position: absolute;
+    top:0;
+    right: 0;
+    margin: 16px;
+    width: fit-content;
+    padding: 0; 
+}
+#nav{
+    width:fit-content;
+    padding:0;
+    margin: 0;
+}
+#nav li{ 
+    list-style: none;  
+    margin:2px;
+    padding:8px;
+    width: 50px;
+    height: 25px;
+    opacity: 0;
+    border-radius: 5px;
+}
+#nav li a {
+    text-decoration: none;
+    color:inherit;
+}
+#nav .shine{
+    background-color: #8d785b;
+    transition: all 0.3s ease-in;
+    opacity: 1;
+    z-index:2;
+}
+#nav .normal{
+    background-color:#cce6f5 ;
+    transition:all 0.3s ease-in;
+    opacity: 0.8;
+}
+
+/* Greeter */
+#Greeter{  
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /*splitting the page in 100 viewheights and use 100 of them*/
+    height:100vh;
+    width:100%;
+    overflow: hidden;
+}
+#imageContainer{
+    background-image: url(../data/Stuiben.jpg);
+    background-size: cover;
+    background-position: center;
+    height:100%;
+    width:100%;
+    margin: 0;
+    animation: scale 12s;
+}
+
+@keyframes scale{
+    0%{transform:scale(1.2);}
+    100%{transform:scale(1);}
+}
+.overlay{
+    position: absolute;
+    height:100%;
+    width:100%;
+    top:0;
+    left: 0;
+    background : rgba(0,0,0, 0.4);
+    z-index: 1;
+}
+#greeterText{
+    position: absolute;
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+.arrow{
+    position:absolute;
+    bottom:45px;
+    right:50px;
+    height:fit-content;
+    width:fit-content;
+    animation-name: fall;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes fall {
+    0%{
+        bottom:45px;
+    }
+    80%{
+        bottom:15px;
+    }
+}
+.arrow-t{  
+    background:white;
+    height:35px;
+    width:2px;
+}
+.arrow-hl{
+    position:absolute;
+    top:25px;
+    left: -4px;
+    background: white;
+    height:13px;
+    width: 2px;
+    transform:rotate(-45deg);
+}
+.arrow-hr{
+    position:absolute;
+    top:25px;
+    left: 4px;
+    background: white;
+    height:13px;
+    width: 2px;
+    transform:rotate(45deg);
+}
+
+
+/* Parts Style */
+
+.greenBack{
+    background: var(--green);
+}
+.greenoverlay{
+    position: absolute;
+    top:0;
+    left: 0; 
+    width:100%;
+    height:100%;
+    background: var(--green);
+    opacity:0.5;
+}
+.blueBack{
+    background: var(--blue);
+}
+
+.blueoverlay{
+    position: absolute;
+    top:0;
+    left: 0; 
+    width:100%;
+    height:100%;
+    background: var(--blue);
+    opacity: 0.7;
+}
+
+/* Slider */
+
+#firstContent{
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:500px;
+}
+
+
+#First{
+    /* Breite wegene den Bildern */
+    width: 850px;
+    height: 350px;  
+    padding: 20px;
+    margin:auto;
+    z-index: 2;
+}
+
+/*Slide Content*/
+#slideBackTextWrapper{
+    position:absolute;
+    margin: 0;
+    height:90px;
+    width: 100%;
+    font-size: 80px;
+    overflow:hidden;
+    z-index: 1;
+    
+}
+#slideBackText{
+    /*position wird für die Animation benötigt */
+    position: absolute;
+    margin: 0;
+    height:90px;
+    width: 100%;
+    font-size: 50px;
+    animation:run linear infinite 15s;
+    font-family: 'Teko', sans-serif;
+}
+
+@keyframes run {
+    0% { right: 0;}
+   100%{ right : 100%;}
+}
+
+#slide-wrapper{
+    position: relative;
+    overflow: hidden;
+    width: 848px;
+    height: 350px;
+}
+#slide-wrapper ul{
+    position:relative;
+    margin-top: 10px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    transition: left 1000ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#slide-wrapper ul li{
+    list-style-type: none;
+    float:left;
+}
+.slides{
+    position:relative;
+    width: 848px;
+    height: 350px;   
+}
+.slides-back{
+    border-radius: 0.5rem;
+    height: 330px;
+    object-fit: fill;
+}
+.des{
+    position:absolute;
+    top: 50px;
+    left: 50px;
+    width: 300px;
+    height: 200px;
+}
+.des-background{  
+    border-radius: 2rem;
+    background-color: lightblue;
+    opacity:0.7;
+}
+.slide-des{
+    padding:9px;
+    color:black;
+}
+.slide-title{
+    margin: 0;
+}
+
+
+
+/* Seat Reserve */
+#Second{
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:500px;
+}
+
+#seatRes{
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    height:400px;
+    width:800px;
+    background-image: url(../data/SeatReserve.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+    opacity: 0.6;
+}
+#seatRes:hover{
+    opacity: 1;
+}
+
+#Second a{
+    position: absolute;
+    width: 100%;
+    height:100%;
+}
+
+/*Pop*/
+
+#Third{
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+    height:450px;
+    overflow:hidden;
+}
+#pop-window{
+    display:none;
+    top:5px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width:880px;
+    height: 440px;
+    z-index:2;
+}
+#close{
+    position: absolute;
+    border:none;
+    border-radius: 10px;
+    top: 10px;
+    right: 10px;
+    background-image: url("./data/close_icon.png");
+    background-size: cover;
+    height:30px;
+    width:30px;
+}
+#close:hover{
+    cursor: pointer;
+}
+#diagrammback1{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height:0;
+    border-top: 30vw solid #63605E;
+    border-right: 25vw solid transparent;
+    opacity:0.5;
+}
+
+#diagrammback2{
+    position: absolute;
+    bottom:0;
+    right:0;
+    width: 0;
+    height:0;
+    border-bottom: 30vw solid #63605E;
+    border-left: 25vw solid transparent;
+    opacity:0.5;
+}
+
+
+#diagrammdes p{
+    position: absolute;
+    top:10%;
+    left:10%;
+    margin:0;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    z-index:1;
+}
+
+.viz1 {
+    position:absolute;
+    top: 60px;
+    left: 300px;
+}
+.viz2{
+    position: absolute;
+    top:100px;
+    left: 700px;
+}
+.viz3{
+    position: absolute;
+    top: 75px;
+    left: 1000px;
+}
+.viz{
+    width: 600px;
+    height:300px;
+    opacity:0.4;
+}
+.viz:hover{
+    transform: scale(1.02);
+    cursor:pointer;
+}
+
+.front{
+    z-index: 1;
+    opacity:1;
+}
+.pop{
+    width: 876px;
+    height:438px;
+    border: 1px solid darkslategrey;
+    border-radius: 5px;
+}
+
+/*Fourth*/
+
+#Fourth{
+    position: relative;
+    height:500px;
+    margin:0;
+    padding-top: 16px;
+}
+
+#topicnews{
+    text-align: center;
+    font-family: 'Rampart One', cursive;
+}
+#content{
+    margin:auto;
+    position: relative;
+    display:flex;
+    flex-direction: row;
+    border:1px solid black;
+    background:#052962;
+    width:95%;
+    padding: 0 5px 0 5px;
+}
+.artWrapper{
+    margin: 10px 5px;
+    width: 20%;
+    height: 300px;
+    border:1px solid grey;
+    padding:10px;
+    background:white;
+}
+.artTitle{
+    margin-top: 10px;
+    text-align:center;
+    height: 40%;
+    font-family: 'Rampart One', cursive;
+}
+.artTitle a {
+    text-decoration: none;
+    color:inherit;
+}
+.textWrapper{
+    padding-top:17px;
+    height: 45%;
+}
+.artText{
+    font-size: 15px;
+    font-weight: bold;
+    color:#515253;
+    margin:0;
+    font-family: 'Klee One', cursive;
+}
+
+#Fifth{
+    position: relative;
+    padding-top: 16px;
+    height:500px;
+    /*remove site background*/
+    margin-bottom: 0;
+    margin-top: 0;
+}
+#Fifth p{
+    position:relative;
+    z-index:3;}
+footer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 400px;
+    background:black;
+    color:white;
+}
+
+footer div{
+    font-family: 'WindSong', cursive;
+}
